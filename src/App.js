@@ -12,7 +12,7 @@ const App = ({location}) => (
 <div  className="ui container">
   <Route location={location} path="/" exact component={ HomePage } />
   <GuestRoute location={location} path="/login" exact component={ Login } />
-  <Route location={location} path="/signup" exact component={ Register } />
+  <GuestRoute location={location} path="/signup" exact component={ Register } />
   <UserRoute location={location} path="/dashboard" exact component={ Dashboard } />
  
 </div>

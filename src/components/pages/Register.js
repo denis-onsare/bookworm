@@ -2,11 +2,11 @@ import React from 'react';
 import SignupForm from "../forms/SignupForm";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { login } from '../../actions/auth';
+import { signup } from '../../actions/user';
 
 class Register extends React.Component {
     submit = data =>
-        this.props.login(data).then(() => this.props.history.push('/dashboard'));
+        this.props.signup(data).then(() => this.props.history.push('/dashboard'));
 
     render () {
         return (
@@ -25,5 +25,4 @@ Register.propTypes = {
     login: PropTypes.func.isRequired
 }
 
-export default connect(null, {login})(Register);
-
+export default connect(null, {signup})(Register);
