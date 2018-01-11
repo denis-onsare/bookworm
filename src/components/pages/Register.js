@@ -1,7 +1,29 @@
 import React from 'react';
+import SignupForm from "../forms/SignupForm";
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { login } from '../../actions/auth';
 
-const Register = () => (
-    <div></div>
-);
+class Register extends React.Component {
+    submit = data =>
+        this.props.login(data).then(() => this.props.history.push('/dashboard'));
 
-export default Register;
+    render () {
+        return (
+            <div>
+                <h1>Sign Up page</h1>
+                <SignupForm submit={this.submit} />
+            </div>
+        );
+    }
+}
+
+Register.propTypes = {
+    history: PropTypes.shape({
+        push: PropTypes.func.isRequired
+    }).isRequired,
+    login: PropTypes.func.isRequired
+}
+
+export default connect(null, {login})(Register);
+

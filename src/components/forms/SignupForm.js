@@ -4,7 +4,7 @@ import { Form, Button, Message } from "semantic-ui-react";
 import Validator from "validator";
 import InlineError from "../messages/InlineError";
 
-class LoginForm extends React.Component {
+class SignupForm extends React.Component {
   state = {
     data: {
       email: "",
@@ -68,20 +68,19 @@ class LoginForm extends React.Component {
             type="password"
             id="password"
             name="password"
-            placeholder="Make it secure"
             value={data.password}
             onChange={this.onChange}
           />
           {errors.password && <InlineError text={errors.password} />}
         </Form.Field>
-        <Button primary>Login</Button>
+        <Button primary>Sign Up</Button>
       </Form>
     );
   }
 }
 
-LoginForm.propTypes = {
+SignupForm.propTypes = {
   submit: PropTypes.func.isRequired
 };
 
-export default LoginForm;
+export default SignupForm;
