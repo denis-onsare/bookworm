@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
     "eslint": "^4.14.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-prettier": "^2.9.0",
@@ -31,6 +32,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint src"
   },
+  "proxy":"http://localhost:8080",
   "devDependencies": {
     "redux-devtools-extension": "^2.13.2"
   }
