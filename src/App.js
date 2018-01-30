@@ -12,6 +12,7 @@ import Dashboard from "./components/pages/Dashboard";
 import UserRoute from "./components/routes/UserRoute";
 import GuestRoute from "./components/routes/GuestRoute";
 import TopNavigation from "./components/navigation/TopNavigation";
+import AddNewBookPage from "./components/pages/AddNewBookPage";
 
 const App = ({location, isAuthenticated}) => (
 <div  className="ui container">
@@ -23,6 +24,7 @@ const App = ({location, isAuthenticated}) => (
   <GuestRoute location={location} path="/login" exact component={ Login } />
   <GuestRoute location={location} path="/signup" exact component={ Register } />
   <UserRoute location={location} path="/dashboard" exact component={ Dashboard } />
+  <UserRoute location={location} path="/books/new" exact component={ AddNewBookPage } />
  
 </div>
 );
